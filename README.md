@@ -23,6 +23,23 @@
 - Boolean Column(Pie)
   API = `/raw/column/boolean/*`
 
+### 扩展数据集展示
+
+#### General
+
+- Target_Column
+  API = `/ext/column/target`
+
+#### In Cat
+
+- Object_Column(All Attributes) shown in Pie Chart
+  API = `/ext/column/object/*`
+
+- Numerial Column(Strip)
+  API = `/ext/column/numerial/*`
+  
+- Boolean Column(Pie)
+  API = `/ext/column/boolean/*`
 
 ### 训练历程
 
