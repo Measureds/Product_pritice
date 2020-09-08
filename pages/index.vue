@@ -10,41 +10,34 @@
     >
       通过数据集内学生信息给出学生综合评定成绩等级的预测。
     </v-banner>
-    <v-card-text class="grey lighten-4">
-      <v-sheet
-        max-width="950"
-        height="400"
-        class="mx-auto"
-      >
-      <template>
-  <v-container fluid>
-    <v-row justify="space-around">
-      <v-col cols="4">
-        <v-img src="http://www.ruanyifeng.com/blogimg/asset/2014/bg2014112909.png" aspect-ratio="1.7"></v-img>
-        <p></p>
-        <v-img src="http://www.ruanyifeng.com/blogimg/asset/2014/bg2014112914.png" aspect-ratio="1.7"></v-img>
-       
-      </v-col>
 
-      <v-col cols="4">
-        <v-img src="http://www.ruanyifeng.com/blogimg/asset/2014/bg2014112905.png" aspect-ratio="1.7" ></v-img>
-        <p></p>
-        <v-img src="http://www.ruanyifeng.com/blogimg/asset/2014/bg2014112903.png" aspect-ratio="1.7" ></v-img>
-       
-      </v-col>
-    </v-row>
-  </v-container>
-</template>
-      </v-sheet>
-    </v-card-text>
+  <v-carousel :show-arrows="false">
+    <v-carousel-item
+      v-for="(item,i) in items"
+      :key="i"
+      :src="item.src"
+    ></v-carousel-item>
+  </v-carousel>
   </v-card>
 </template>
 
 <script>
   export default {
-    data: () => ({
-      sticky: false,
-    }),
+    data () {
+      return {
+        items: [
+          {
+            src: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1756717992,2460423109&fm=26&gp=0.jpg',
+          },
+          {
+            src: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3200491137,4202371437&fm=26&gp=0.jpg',
+          },
+          {
+            src: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599576565088&di=ea5c5659a07eb7387327b57a06184ad7&imgtype=0&src=http%3A%2F%2Fimages.martechadvisor.com%2Fimages%2Fuploads%2Fcontent_images%2Fartificial_intelligence_the_future_of_lead_engagement_5bc747083630a.jpg',
+          },
+        ],
+      }
+    },
   }
 </script>
   //slice
