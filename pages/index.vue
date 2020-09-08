@@ -1,97 +1,65 @@
 <template>
-  <v-layout
-    column
-    justify-center
-    align-center
-  >
-    <v-flex
-      xs12
-      sm8
-      md6
+  <v-card>
+    <v-system-bar></v-system-bar>
+    <v-toolbar flat>
+      <v-toolbar-title>成绩预测</v-toolbar-title>
+      <v-spacer></v-spacer>
+    </v-toolbar>
+    <v-banner
+      single-line
     >
-      <div class="text-center">
-        <logo />
-        <vuetify-logo />
-      </div>
-      <v-card>
-        <v-card-title class="headline">
-          Welcome to the Vuetify + Nuxt.js template
-        </v-card-title>
-        <v-card-text>
-          <p>Vuetify is a progressive Material Design component framework for Vue.js. It was designed to empower developers to create amazing applications.</p>
-          <p>
-            For more information on Vuetify, check out the <a
-              href="https://vuetifyjs.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              documentation
-            </a>.
-          </p>
-          <p>
-            If you have questions, please join the official <a
-              href="https://chat.vuetifyjs.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="chat"
-            >
-              discord
-            </a>.
-          </p>
-          <p>
-            Find a bug? Report it on the github <a
-              href="https://github.com/vuetifyjs/vuetify/issues"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="contribute"
-            >
-              issue board
-            </a>.
-          </p>
-          <p>Thank you for developing with Vuetify and I look forward to bringing more exciting features in the future.</p>
-          <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
-          </div>
-          <hr class="my-3">
-          <a
-            href="https://nuxtjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt Documentation
-          </a>
-          <br>
-          <a
-            href="https://github.com/nuxt/nuxt.js"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Nuxt GitHub
-          </a>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer />
-          <v-btn
-            color="primary"
-            nuxt
-            to="/inspire"
-          >
-            Continue
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-flex>
-  </v-layout>
+      通过数据集内学生信息给出学生综合评定成绩等级的预测。
+    </v-banner>
+    <v-card-text class="grey lighten-4">
+      <v-sheet
+        max-width="950"
+        height="400"
+        class="mx-auto"
+      >
+      <template>
+  <v-container fluid>
+    <v-row justify="space-around">
+      <v-col cols="4">
+        <v-img src="http://www.ruanyifeng.com/blogimg/asset/2014/bg2014112909.png" aspect-ratio="1.7"></v-img>
+        <p></p>
+        <v-img src="http://www.ruanyifeng.com/blogimg/asset/2014/bg2014112914.png" aspect-ratio="1.7"></v-img>
+       
+      </v-col>
+
+      <v-col cols="4">
+        <v-img src="http://www.ruanyifeng.com/blogimg/asset/2014/bg2014112905.png" aspect-ratio="1.7" ></v-img>
+        <p></p>
+        <v-img src="http://www.ruanyifeng.com/blogimg/asset/2014/bg2014112903.png" aspect-ratio="1.7" ></v-img>
+       
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
+      </v-sheet>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-import VuetifyLogo from '~/components/VuetifyLogo.vue'
-
-export default {
-  components: {
-    Logo,
-    VuetifyLogo
+  export default {
+    data: () => ({
+      sticky: false,
+    }),
   }
-}
 </script>
+  //slice
+
+  // asyncData ({ params }) {//请求
+	// return axios({
+	//     method: 'get',
+	//     url: 'http://127.0.0.1:8000/raw/column/target'
+	// })
+	// .then(function (response) {
+  //           console.log(response.data)
+  //           return { info: response.data};
+  //           error(params)
+  //       })   
+  //   },
+}
+
+
