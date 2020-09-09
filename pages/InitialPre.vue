@@ -1,9 +1,18 @@
 <template>
-  <div id="">
+<div>
+  <v-container fluid>
+      <v-col class="d-flex" cols="12" sm="6">
+        <v-select
+          :items="items"
+          v-model="value"
+          filled
+          label="Filled style"
+          dense
+        ></v-select>
+      </v-col>
+  </v-container>
     <div id="myChart"></div>
-    <!-- <div id="myChart"></div> -->
-    <!-- <div id="myChart2" ></div> -->
-  </div>
+</div>
 </template>
 <script type="text/javascript">
   import echarts from 'echarts'
@@ -12,15 +21,16 @@
   import VueAxios from 'vue-axios'
   export default {
     name: 'Echarts',
-    data() {
-      return {
-        importance :{}
-      }
-    },
+    data: () => ({
+      items: ['Target'],
+      value:''
+    }),
     methods: {
       loaddata() {
         // console.log('+++++++++++')
-        axios.get('http://127.0.0.1:8000/datasets/column/target').then((response) => {
+        var url = 'http://127.0.0.1:8000/datasets/column/' + data.value;
+        console.log("url:",url)
+        axios.get(url).then((response) => {
           this.importance = response.data.result
           // console.log('motherfucker', this.importance)
           this.loadData_X()
@@ -43,7 +53,7 @@
           }
          // this.loadData_Y()
           //  return this.data_key
-          //  console.log(" data_key?",this.data_key)
+            console.log(" data_key?",this.data_key)
           //   console.log(" data_value?",this.data_value)
             this.echartsInit()
       },
@@ -88,26 +98,7 @@
           }]
         })
       },
-      // echartsInit2 () {
-      //   this.Chart = echarts.init(document.getElementById('myChart2'))
-      //   this.Chart.setOption({
-      //     title: {text: 'echarts 饼图'},
-      //     series: [
-      //       {
-      //         name: '访问来源',
-      //         type: 'pie',
-      //         radius: '55%',
-      //         data: [
-      //           {value: 235, name: '视频广告'},
-      //           {value: 274, name: '联盟广告'},
-      //           {value: 310, name: '邮件营销'},
-      //           {value: 335, name: '直接访问'},
-      //           {value: 400, name: '搜索引擎'}
-      //         ]
-      //       }
-      //     ]
-      //   })
-      // }
+      
     },
     mounted() {
       this.loaddata()
