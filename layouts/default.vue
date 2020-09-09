@@ -109,7 +109,7 @@ export default {
         {
           icon:'',
           title:'What',
-          to: '/what'
+          to: '/chart'
         }
       ],
       miniVariant: false,

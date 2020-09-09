@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="item in posts" :key="item.name">
+        <tr v-for="item in info" :key="item.id">
           <td>{{ item.name }}</td>
           <td>{{ item.age }}</td>
         </tr>
@@ -34,14 +34,20 @@
 </template>
 
 <script>
-import axios from '../plugins/axios'
+import myaxios from '~/plugins/myaxios'
+import axios from 'axios'
 
 export default {
-  asyncData (op) {//请求
-			return axios.get('')
-		      .then((res) => {
-		        return { posts: res.data.slice(0,5) }
-		      })
-		},
+  asyncData ({ params }) {//请求
+	return axios({
+	    method: 'get',
+	    url: 'https://5b5e71c98e9f160014b88cc9.mockapi.io/api/v1/lists'
+	})
+	.then(function (response) {
+            console.log(response.data)
+            return { info: response.data};
+            error(params)
+        })   
+    },
 }
 </script>
