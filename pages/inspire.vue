@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import myaxios from '~/plugins/myaxios'
+// import myaxios from '~/plugins/myaxios'
 import axios from 'axios'
 
 export default {

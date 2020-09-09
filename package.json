@@ -12,7 +12,8 @@
   "dependencies": {
     "axios": "^0.20.0",
     "echarts": "^4.9.0",
-    "nuxt": "^2.14.0"
+    "nuxt": "^2.14.0",
+    "vue-axios": "^2.1.5"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",
