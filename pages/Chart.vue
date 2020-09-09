@@ -1,137 +1,191 @@
 <template>
-  <div id="">
-    <div id="myChart"></div>
-    <!-- <div id="myChart"></div> -->
-    <!-- <div id="myChart2" ></div> -->
-  </div>
+  <v-timeline>
+    <v-timeline-item
+      v-for="n in 1"
+      :key="n"
+      large
+    >
+      <template v-slot:icon>
+        <v-avatar>
+          <img src="http://i.pravatar.cc/64">
+        </v-avatar>
+      </template>
+      <template v-slot:opposite>
+        <span>Version:1.0.0</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">RandomForest</v-card-title>
+        <v-card-text>
+          性能指标：2.5136288034360588
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+    <v-timeline-item
+      v-for="n in 1"
+      :key="n"
+      large
+    >
+      <template v-slot:icon>
+        <v-avatar>
+          <img src="http://i.pravatar.cc/64">
+        </v-avatar>
+      </template>
+      <template v-slot:opposite>
+        <span>Version:1.0.1</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">CatBoost</v-card-title>
+        <v-card-text>
+          性能指标：2.5201534580726337
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+
+     <v-timeline-item
+      v-for="n in 1"
+      :key="n"
+      large
+    >
+      <template v-slot:icon>
+        <v-avatar>
+          <img src="http://i.pravatar.cc/64">
+        </v-avatar>
+      </template>
+      <template v-slot:opposite>
+        <span>Version:1.0.2</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">XGRFBoost</v-card-title>
+        <v-card-text>
+          性能指标：2.577467060911487
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+  <!--  -->
+    <v-timeline-item
+      v-for="n in 1"
+      :key="n"
+      large
+    >
+      <template v-slot:icon>
+        <v-avatar>
+          <img src="http://i.pravatar.cc/64">
+        </v-avatar>
+      </template>
+      <template v-slot:opposite>
+        <span>Version:1.0.3</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">LightGBM</v-card-title>
+        <v-card-text>
+          性能指标：2.600404101246184
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+    <!--  -->
+    <v-timeline-item
+      v-for="n in 1"
+      :key="n"
+      large
+    >
+      <template v-slot:icon>
+        <v-avatar>
+          <img src="http://i.pravatar.cc/64">
+        </v-avatar>
+      </template>
+      <template v-slot:opposite>
+        <span>Version:1.0.4</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">Support Vector Machine</v-card-title>
+        <v-card-text>
+          性能指标：2.606449937079663
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+    <!--  -->
+    <v-timeline-item
+      v-for="n in 1"
+      :key="n"
+      large
+    >
+      <template v-slot:icon>
+        <v-avatar>
+          <img src="http://i.pravatar.cc/64">
+        </v-avatar>
+      </template>
+      <template v-slot:opposite>
+        <span>Version:1.0.5</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">XGBoost</v-card-title>
+        <v-card-text>
+          性能指标：2.655595771443991
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+    <!--  -->
+    <v-timeline-item
+      v-for="n in 1"
+      :key="n"
+      large
+    >
+      <template v-slot:icon>
+        <v-avatar>
+          <img src="http://i.pravatar.cc/64">
+        </v-avatar>
+      </template>
+      <template v-slot:opposite>
+        <span>Version:1.0.6</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">SGD</v-card-title>
+        <v-card-text>
+          性能指标：2.6793871215014433
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+    <!--  -->
+     <v-timeline-item
+      v-for="n in 1"
+      :key="n"
+      large
+    >
+      <template v-slot:icon>
+        <v-avatar>
+          <img src="http://i.pravatar.cc/64">
+        </v-avatar>
+      </template>
+      <template v-slot:opposite>
+        <span>Version:1.0.7</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">ElasticNet</v-card-title>
+        <v-card-text>
+          性能指标：2.86670253809402
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+    <!--  -->
+     <v-timeline-item
+      v-for="n in 1"
+      :key="n"
+      large
+    >
+      <template v-slot:icon>
+        <v-avatar>
+          <img src="http://i.pravatar.cc/64">
+        </v-avatar>
+      </template>
+      <template v-slot:opposite>
+        <span>Version:1.0.8</span>
+      </template>
+      <v-card class="elevation-2">
+        <v-card-title class="headline">DecisionTree</v-card-title>
+        <v-card-text>
+          性能指标：3.496992828203838
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+  </v-timeline>
 </template>
-<script type="text/javascript">
-  import echarts from 'echarts'
-  import Vue from 'vue'
-  import axios from 'axios'
-  import VueAxios from 'vue-axios'
-  export default {
-    name: 'Echarts',
-    data() {
-      return {
-        importance :{}
-      }
-    },
-    methods: {
-      loaddata() {
-        // console.log('+++++++++++')
-        axios.get('http://127.0.0.1:8000/stat/importance').then((response) => {
-          this.importance = response.data.result
-          // console.log('motherfucker', this.importance)
-          this.loadData_X()
-        }).catch((err) => {
-          console.log(err)
-        })
-      },
-      loadData_X() {
-        // console.log("\[DEBUG\] MYDATA in the next fun()= ", this.importance)
-        this.data_key = []
-        this.data_value = []
-        // console.log("length = ",Object.keys(this.importance).length)
-      //  for (var i = 0, l = Object.keys(this.importance).length; i < l; i++)
-          for (var key in this.importance) 
-          {
-           // console.log("存啥了key？",key)
-            this.data_key.push(key)
-            //console.log("存啥了啊",this.importance[key])
-            this.data_value.push(this.importance[key])
-          }
-         // this.loadData_Y()
-          //  return this.data_key
-          //  console.log(" data_key?",this.data_key)
-          //   console.log(" data_value?",this.data_value)
-            this.echartsInit()
-      },
-      loadData_Y() {
-      //   this.data_value = []
-      //  for (var key in this.data_key)
-      //   {
-      //     this.data_value.push(this.importance[key])
-      //     console.log("存啥了啊",this.data_value)
-      //   }
-      },
-      echartsInit() {
-        // 找到容器
-      //  this.loaddata()
-        this.myChart = echarts.init(document.getElementById('myChart'))
-         console.log(" data_key?",this.data_key)
-            console.log(" data_value?",this.data_value)
-        // 开始渲染
-        this.myChart.setOption({
-          title: {
-            text: '在Vue中使用echarts'
-          },
-          tooltip: {},
-          xAxis: {
-            data: this.data_key,
-            axisLabel:{interval:1}
-          },
-           grid:{
-               x:20,
-               y:55,
-               x2:35,
-               y2:60,
-               borderWidth:1
-          },
-          yAxis: {},
-          series: [{
-            name: '销量',
-            type: 'bar',
-            data: this.data_value
-          }]
-        })
-      },
-      // echartsInit2 () {
-      //   this.Chart = echarts.init(document.getElementById('myChart2'))
-      //   this.Chart.setOption({
-      //     title: {text: 'echarts 饼图'},
-      //     series: [
-      //       {
-      //         name: '访问来源',
-      //         type: 'pie',
-      //         radius: '55%',
-      //         data: [
-      //           {value: 235, name: '视频广告'},
-      //           {value: 274, name: '联盟广告'},
-      //           {value: 310, name: '邮件营销'},
-      //           {value: 335, name: '直接访问'},
-      //           {value: 400, name: '搜索引擎'}
-      //         ]
-      //       }
-      //     ]
-      //   })
-      // }
-    },
-    mounted() {
-      this.loaddata()
-      // this.loadData_X()
-      // this.echartsInit2()
-    }
-  }
-
-</script>
-
-
-<style>
-  #myChart {
-    width: 600px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    float: left;
-  }
-
-  /* #myChart2{
-    width: 600px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    float: right;
-  } */
-
-</style>

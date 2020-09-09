@@ -103,12 +103,17 @@ export default {
         },
         {
           icon: 'mdi-chart-bubble',
-          title: 'Inspire',
+          title: 'Relevance display',
           to: '/inspire'
         },
         {
           icon:'',
-          title:'What',
+          title:'Initial data',
+          to:'/InitialPre'
+        },
+        {
+          icon:'',
+          title:'Version iteration',
           to: '/chart'
         }
       ],
