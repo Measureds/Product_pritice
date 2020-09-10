@@ -5,9 +5,11 @@
         <v-select
           :items="items"
           v-model="value"
+          value = "select"
           filled
           label="Filled style"
           dense
+          @change="onchange"
         ></v-select>
       </v-col>
   </v-container>
@@ -22,13 +24,51 @@
   export default {
     name: 'Echarts',
     data: () => ({
-      items: ['Target'],
+      items: [    'absences',
+    'studytime_ratio',
+    'health',
+    'age',
+    'goout',
+    'Dalc_per_week',
+    'reason',
+    'Mjob',
+    'class',
+    'Medu',
+    'freetime',
+    'Fedu',
+    'PairEdu',
+    'All_alc',
+    'activities',
+    'Walc',
+    'famsup',
+    'famrel',
+    'Fjob' ,
+    'guardian',
+    'failures',
+    'traveltime',
+    'schoolsup',
+    'famsize',
+    'school',
+    'higher',
+    'nursery',
+    'romantic',
+    'address',
+    'paid',
+    'more_high',
+    'internet',
+    'Pstatus',
+    'All_sup'],
       value:''
     }),
     methods: {
+      onchange()
+      {
+          this.loaddata()
+      },
       loaddata() {
         // console.log('+++++++++++')
-        var url = 'http://127.0.0.1:8000/datasets/column/' + data.value;
+        var url = 'http://127.0.0.1:8000/datasets/column/' + this.value ;
+        this.head = this.value + "与其人数统计结果分布图"
         console.log("url:",url)
         axios.get(url).then((response) => {
           this.importance = response.data.result
@@ -74,7 +114,7 @@
         // 开始渲染
         this.myChart.setOption({
           title: {
-            text: '成绩分布及其人数'
+            text: this.head
           },
           tooltip: {},
           xAxis: {
