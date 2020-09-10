@@ -1,5 +1,5 @@
-<template>
-  <v-app light>
+<template light>
+  <v-app>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -7,7 +7,7 @@
       fixed
       app
     >
-      <v-list>
+      <v-list class ="primary">
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -28,6 +28,7 @@
       :clipped-left="clipped"
       fixed
       app
+      class="primary"
     >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn

@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-system-bar></v-system-bar>
+    <v-system-bar class="primary"></v-system-bar>
     <v-toolbar flat>
       <v-toolbar-title>成绩预测</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -8,7 +8,7 @@
     <v-banner
       single-line
     >
-      通过数据集内学生信息给出学生综合评定成绩等级的预测。
+      <a herf="#">通过数据集内学生信息给出学生综合评定成绩等级的预测。</a>
     </v-banner>
 
   <v-carousel :show-arrows="false">

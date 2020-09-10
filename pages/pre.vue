@@ -3,11 +3,12 @@
       <!-- 1 -->
       <v-form 
       ref="form"
-      v-model="valid" >
-    <v-col cols="12"  v-for="(item,name) in menuList" :key="name">
+      v-model="valid.form" >
+      <v-col cols="12"  v-for="(item,name) in menuList" :key="name">
         <header>{{name}}</header>
       <v-col class="d-flex" cols="12" sm="6">
         <v-select
+          @change="onChangeSelect($event,name)"
           :items="item"
           filled
           label="select"
@@ -29,21 +30,23 @@
 </template>
 
 <script>
+import axios from 'axios'
   export default {
     data: () => ({
         valid:{
-  "School": "string",
+          "form":true,
+  "School": "",
   "Class": 0,
   "Age": 0,
-  "Address": "string",
-  "Famsize": "string",
-  "Pstatus": "string",
+  "Address": "",
+  "Famsize": "",
+  "Pstatus": "",
   "Medu": 0,
   "Fedu": 0,
-  "Mjob": "string",
-  "Fjob": "string",
-  "Reason": "string",
-  "Guardian": "string",
+  "Mjob": "",
+  "Fjob": "",
+  "Reason": "",
+  "Guardian": "",
   "TravelTime": 0,
   "StudyTime": 0,
   "Failures": 0,
@@ -64,33 +67,33 @@
   "Absences": 0
 },
         menuList:{
-       school_list:["GP","MS"] ,
-       class_list:[0,1] ,
-       age_list:[15,16,17,18,19,20,21,22] ,
-       address:["U","R"] ,
-       famsize_list:["LE3","GT3"] ,
-       Pstatus_list:["T","A"] ,
-       Medu_list:[0,1,2,3,4] ,
-       Fjob_list:["services","other","at_home","teacher","health"] ,
-       reason_list:["course","reputation","home","other"] ,
-       guardian_list:["mother","father","other"] ,
-       traveltime_list:[0,1,2,3,4] ,
-       failures_list:[0,1,2,3] ,
-       schoolsup_list:[true,false] ,
-       famsup_list:[true,false] ,
-       paid_list:[true,false] ,
-       activities_list:[true,false] ,
-       nursery_list:[true,false] ,
-       higher_list:[true,false] ,
-       internet_list:[true,false] ,
-       romantic_list:[true,false] ,
-       famrel_list:[1,2,3,,4,5] ,
-       freetime_list:[1,2,3,4,5] ,
-       goout_list:[1,2,3,4,5] ,
-       dalc_list:[1,2,3,4,5] ,
-       Walc_list:[1,2,3,4,5] ,
-       helath_list:[1,2,3,4,5] ,
-       absences_list:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,30,32,38,40,54,56,75] ,}
+       School:["GP","MS"] ,
+       Class:[0,1] ,
+       Age:[15,16,17,18,19,20,21,22] ,
+       Address:["U","R"] ,
+       Famsize:["LE3","GT3"] ,
+       Pstatus:["T","A"] ,
+       Medu:[0,1,2,3,4] ,
+       Fjob:["services","other","at_home","teacher","health"] ,
+       Reason:["course","reputation","home","other"] ,
+       Guardian:["mother","father","other"] ,
+       Traveltime:[0,1,2,3,4] ,
+       Failures:[0,1,2,3] ,
+       Schoolsup:[true,false] ,
+       Famsup:[true,false] ,
+       Paid:[true,false] ,
+       Activities:[true,false] ,
+       Nursery:[true,false] ,
+       Higher:[true,false] ,
+       Internet:[true,false] ,
+       Romantic:[true,false] ,
+       Famrel:[1,2,3,4,5] ,
+       Freetime:[1,2,3,4,5] ,
+       Goout:[1,2,3,4,5] ,
+       Dalc:[1,2,3,4,5] ,
+       Walc:[1,2,3,4,5] ,
+       Helath:[1,2,3,4,5] ,
+       Absences:[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,28,30,32,38,40,54,56,75] ,}
 
 
 
@@ -98,9 +101,15 @@
     }),
     methods:{
          validate () {
-             console.log(this.vaild)
-        this.$refs.form.validate(this.valid)
+             console.log(this.valid)
+            axios.post('http://127.0.0.1:8000/predict/form',this.valid).then(function (response) {
+        console.log("结果：",response)
+        console.log(response.data)
+      })
       },
+      onChangeSelect(v,n){
+        this.valid[n] = v
+      }
     }
 
   }
