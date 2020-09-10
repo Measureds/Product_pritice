@@ -6,7 +6,7 @@
           :items="items"
           v-model="value"
           filled
-          label="Filled style"
+          label="Seclect"
           dense
           @change="onchange"
         ></v-select>

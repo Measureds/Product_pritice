@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app Light>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -102,7 +102,7 @@ export default {
           to: '/'
         },
         {
-          icon:'',
+          icon:'mdi-application',
           title:'Initial data',
           to:'/InitialPre'
         },
@@ -120,6 +120,11 @@ export default {
           icon:'',
           title:'Version iteration',
           to: '/chart'
+        },
+        {
+          icon:'',
+          title:'Prediction of results',
+          to: '/pre'
         }
       ],
       miniVariant: false,
