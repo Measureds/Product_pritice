@@ -21,11 +21,35 @@
       color="success"
       class="mr-4"
       @click="validate"
+      @click.stop="dialog = true"
     >
       submit
     </v-btn>
    </v-form >
-    
+    <v-dialog
+      v-model="dialog"
+      max-width="290"
+    >
+      <v-card>
+        <v-card-title class="headline">预测结果反馈：</v-card-title>
+
+        <v-card-text>
+          {{res}}
+        </v-card-text>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="green darken-1"
+            text
+            @click="dialog = false"
+          >
+            确定
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
@@ -33,6 +57,8 @@
 import axios from 'axios'
   export default {
     data: () => ({
+      dialog:false,
+      res:[],
         valid:{
           "form":true,
   "School": "",
@@ -74,10 +100,13 @@ import axios from 'axios'
        Famsize:["LE3","GT3"] ,
        Pstatus:["T","A"] ,
        Medu:[0,1,2,3,4] ,
+       Fedu:[0,1,2,3,4],
+       Mjob:["services","other","at_home","teacher","health"] ,
        Fjob:["services","other","at_home","teacher","health"] ,
        Reason:["course","reputation","home","other"] ,
        Guardian:["mother","father","other"] ,
        Traveltime:[0,1,2,3,4] ,
+       StudyTime:[1,2,3,4],
        Failures:[0,1,2,3] ,
        Schoolsup:[true,false] ,
        Famsup:[true,false] ,
@@ -102,9 +131,11 @@ import axios from 'axios'
     methods:{
          validate () {
              console.log(this.valid)
-            axios.post('http://127.0.0.1:8000/predict/form',this.valid).then(function (response) {
+            // this = that
+            axios.post('http://127.0.0.1:8000/predict/form',this.valid).then(response => {
         console.log("结果：",response)
-        console.log(response.data)
+        this.res = response.data.result //.map(e=>e)
+        console.log(this.res)
       })
       },
       onChangeSelect(v,n){
