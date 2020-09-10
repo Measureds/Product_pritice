@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app light>
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
@@ -112,17 +112,17 @@ export default {
           to: '/inspire'
         },
         {
-          icon:'',
+          icon:'mdi-information',
           title:'Mean square deviation',
           to:'/mesqde'
         },
         {
-          icon:'',
+          icon:'mdi-circle',
           title:'Version iteration',
           to: '/chart'
         },
         {
-          icon:'',
+          icon:'mdi-pencil',
           title:'Prediction of results',
           to: '/pre'
         }

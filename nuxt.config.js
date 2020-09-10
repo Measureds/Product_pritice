@@ -1,5 +1,6 @@
 import colors from 'vuetify/es5/util/colors'
 
+
 export default {
   /*
   ** Nuxt rendering mode
@@ -64,13 +65,10 @@ export default {
       dark: false,
       themes: {
         light: {
-          primary: '#409eff',
-          secondary: '#54a8ff',
-          accent: '#9c27b0',
-          error: '#f44336',
-          warning: '#ff5722',
-          info: '#607d8b',
-          success: '#4caf50'
+          primary: colors.purple,
+          secondary: colors.grey.darken1,
+          accent: colors.shades.black,
+          error: colors.red.accent3,
         },
         dark: {
           primary: colors.blue.darken2,
