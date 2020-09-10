@@ -102,14 +102,19 @@ export default {
           to: '/'
         },
         {
+          icon:'',
+          title:'Initial data',
+          to:'/InitialPre'
+        },
+        {
           icon: 'mdi-chart-bubble',
           title: 'Relevance display',
           to: '/inspire'
         },
         {
           icon:'',
-          title:'Initial data',
-          to:'/InitialPre'
+          title:'Mean square deviation',
+          to:'/mesqde'
         },
         {
           icon:'',

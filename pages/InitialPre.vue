@@ -5,7 +5,6 @@
         <v-select
           :items="items"
           v-model="value"
-          value = "select"
           filled
           label="Filled style"
           dense
@@ -24,40 +23,7 @@
   export default {
     name: 'Echarts',
     data: () => ({
-      items: [    'absences',
-    'studytime_ratio',
-    'health',
-    'age',
-    'goout',
-    'Dalc_per_week',
-    'reason',
-    'Mjob',
-    'class',
-    'Medu',
-    'freetime',
-    'Fedu',
-    'PairEdu',
-    'All_alc',
-    'activities',
-    'Walc',
-    'famsup',
-    'famrel',
-    'Fjob' ,
-    'guardian',
-    'failures',
-    'traveltime',
-    'schoolsup',
-    'famsize',
-    'school',
-    'higher',
-    'nursery',
-    'romantic',
-    'address',
-    'paid',
-    'more_high',
-    'internet',
-    'Pstatus',
-    'All_sup'],
+      items: ['school','class','age','address','famsize','Pstatus','Medu','Fedu','Mjob','Fjob','reason','guardian','traveltime','studytime','failures','schoolsup','famsup','paid','activities','nursery','higher','internet','romantic','famrel','freetime','goout','Dalc','Walc','health','absences','G'],
       value:''
     }),
     methods: {
@@ -69,7 +35,7 @@
         // console.log('+++++++++++')
         var url = 'http://127.0.0.1:8000/datasets/column/' + this.value ;
         this.head = this.value + "与其人数统计结果分布图"
-        console.log("url:",url)
+        // console.log("url:",url)
         axios.get(url).then((response) => {
           this.importance = response.data.result
           // console.log('motherfucker', this.importance)
@@ -93,7 +59,7 @@
           }
          // this.loadData_Y()
           //  return this.data_key
-            console.log(" data_key?",this.data_key)
+            // console.log(" data_key?",this.data_key)
           //   console.log(" data_value?",this.data_value)
             this.echartsInit()
       },
