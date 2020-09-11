@@ -128,7 +128,7 @@ export default {
           to: '/pre'
         }
       ],
-      miniVariant: false,
+      miniVariant: true,
       right: true,
       rightDrawer: false,
       title: '前端页面展示'
